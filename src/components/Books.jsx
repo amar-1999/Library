@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   image: {
     width: 110,
     height: 110,
-    objectFit: 'cover',
+    objectFit: 'contain',
     alignSelf: 'center',
   },
   rightItem: {

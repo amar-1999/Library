@@ -98,8 +98,8 @@ const styles = StyleSheet.create({
         height: 40,
     },
     image: {
-        width: 30,
-        height: 30,
-        objectFit: 'cover',
+        width: 28,
+        height: 28,
+        objectFit: 'contain',
     }
 });
