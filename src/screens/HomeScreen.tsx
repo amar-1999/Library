@@ -15,11 +15,12 @@ const HomeScreen = () => {
       if (query) {
         response = await searchBooksByTitle(query);
         setLoading(false);
+        setBooks(response?.docs?.filter(item => item?.title !== null));
       } else {
         response = await getBooks();
         setLoading(false);
+        setBooks(response?.reading_log_entries?.filter(item => item?.work?.title !== null));
       }
-      setBooks(response?.reading_log_entries?.filter(item => item?.work?.title !== null) || response?.docs || []);
     } catch (error) {
       console.error('Error fetching books:', error);
       setBooks([]);
@@ -67,6 +68,8 @@ const HomeScreen = () => {
             data={books}
             renderItem={renderItem}
             keyExtractor={(item, index) => index.toString()}
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
             contentContainerStyle={{
               paddingVertical: 8,
               paddingHorizontal: 4

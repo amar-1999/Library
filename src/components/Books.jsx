@@ -46,8 +46,8 @@ const Books = ({book}) => {
         <View style={styles.items}>
           <Text style={styles.leftItemHeader}>Author(s)</Text>
           <Text style={styles.leftItem}>
-            {book.work?.author_names[0]
-              ? book.work?.author_names[0]
+            {book?.work?.author_names[0]
+              ? book?.work?.author_names[0]
               : book?.author_name}
           </Text>
         </View>
